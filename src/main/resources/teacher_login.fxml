@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400" prefWidth="700" style="-fx-background-color: #2F4F4F;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.smartloginsystem.TeacherLoginController">
+
+    <!-- Left Side Logo Panel -->
+    <AnchorPane layoutX="0" layoutY="0" prefHeight="400" prefWidth="300" style="-fx-background-color: #F8F8FF;">
+        <ImageView fitHeight="160" fitWidth="160" layoutX="70" layoutY="120" preserveRatio="true">
+            <image>
+                <Image url="" />
+            </image>
+        </ImageView>
+    </AnchorPane>
+
+    <!-- Right Side Login Form -->
+    <VBox alignment="CENTER" layoutX="320" layoutY="80" spacing="15">
+        <Label text="Teacher Login" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+        <TextField fx:id="usernameField" promptText="Username" prefWidth="250" />
+        <PasswordField fx:id="passwordField" promptText="Password" prefWidth="250" />
+
+        <Button text="Login" onAction="#handleLogin" prefWidth="120" style="-fx-background-color: #4682B4; -fx-text-fill: white;"/>
+        <Button text="Register" onAction="#goToRegister" prefWidth="120" style="-fx-background-color: #F8F8FF;"/>
+
+    </VBox>
+
+</AnchorPane>

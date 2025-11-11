@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="900" style="-fx-background-color:  linear-gradient(to bottom right, #DDE1F8, #C5CAE9, #9FA8DA)" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.ProjectSubmittedController">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="414.0" spacing="10" style="-fx-background-color: linear-gradient(to right, #141E30, #243B55); -fx-padding: 10;">
+        <ImageView fitHeight="40" fitWidth="40">
+            <Image url="@img.png" />
+        </ImageView>
+        <Label prefHeight="62.0" prefWidth="580.0" style="-fx-font-size: 20px;           -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-padding: 15; -fx-border-radius: 20;" text="Smart Thesis/Project Manager" />
+    </HBox>
+
+    <!-- Main Card -->
+    <VBox layoutX="80" layoutY="86.0" prefHeight="503.0" prefWidth="731.0" spacing="12" style="-fx-background-color:
+     white; -fx-background-radius: 15; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 8, 0, 0, 4);"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="86.0">
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="📤 Submit Project Idea" />
+
+        <!-- Title -->
+        <Label style="-fx-font-size: 14px;" text="Project Title:">
+            <font>
+                <Font name="Segoe Script Bold" size="12.0" />
+            </font></Label>
+        <TextField fx:id="titleField" promptText="Enter your project title" />
+
+        <!-- Research Area -->
+        <Label style="-fx-font-size: 14px;" text="Project Type:" />
+        <ComboBox fx:id="researchAreaBox" promptText="Select research area">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String />
+                    <String fx:value="Java fx" />
+                    <String fx:value="Games project" />
+                    <String fx:value="Management System" />
+                    <String fx:value="Argiculture project" />
+                    <String fx:value="ML project" />
+                    <String fx:value="IoT" />
+                    <String fx:value="Web Development" />
+                    <String fx:value="Cybersecurity" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Description -->
+        <Label style="-fx-font-size: 14px;" text="Description:" />
+        <TextArea fx:id="descriptionField" minHeight="200.0" minWidth="500.0" prefHeight="202.0" prefWidth="677.0" promptText="Write a short abstract or project concept here">
+         <font>
+            <Font size="13.0" />
+         </font></TextArea>
+
+        <!-- File Upload -->
+        <HBox spacing="10">
+            <Label text="📎 Attach File (PDF/DOCX):" />
+            <Button fx:id="browseButton" onAction="#handleBrowseFile" style="-fx-background-color: #3c8dbc; -fx-text-fill: white; -fx-background-radius: 8;" text="Browse..." />
+        </HBox>
+
+        <!-- Similarity Check -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <CheckBox fx:id="similarityCheck" text="Run Similarity Check" />
+            <Label style="-fx-text-fill: #555555; -fx-font-size: 12px;" text="(auto-checks using SBERT + cosine similarity)" />
+        </HBox>
+
+        <!-- Result Box -->
+        <VBox fx:id="resultBox" spacing="5" style="-fx-background-color: #ffffff;         -fx-background-radius: 10; -fx-padding: 10;" visible="true">
+            <Label style="-fx-font-weight: bold;-fx-text-fill: #555555;" text="🔍 Similarity Result:" />
+            <Label fx:id="similarProjectLabel" text="Most Similar: None" />
+            <Label fx:id="similarityScoreLabel" text="Similarity Score: 0%" />
+            <Label fx:id="remarkLabel" text="Remark: Unique Idea" />
+        </VBox>
+
+        <!-- Submit Button -->
+        <Button fx:id="submitButton" onAction="#handleSubmit" style="-fx-background-color: #007aff; -fx-text-fill: white; -fx-font-weight:                              bold; -fx-font-size: 14px; -fx-background-radius: 10;" text="Submit Idea 🚀" />
+        <effect>
+            <Blend mode="RED" />
+        </effect>
+
+    </VBox>
+
+    <!-- Footer -->
+    <Label layoutX="310" layoutY="570" style="-fx-text-fill: white;      -fx-font-size: 12px;" text="© 2025 Smart Thesis Manager (Offline Mode)" />
+    <Button layoutX="716.0" layoutY="22.0" mnemonicParsing="false" onAction="#gotodashboard" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #FFFFFF;             -fx-text-fill: #64748b; -fx-font-size: 14px; -fx-font-weight: 500;             -fx-padding: 8 16; -fx-border-color: #e2e8f0; -fx-border-radius: 6; -fx-border-width: 1;" text="← Back to Dashboard" textOverrun="CLIP" wrapText="true">
+        <font>
+            <Font name="Constantia Bold" size="37.0" />
+        </font></Button>
+</AnchorPane>

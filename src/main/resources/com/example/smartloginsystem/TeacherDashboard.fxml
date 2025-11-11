@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="846.0" prefWidth="1394.0" style="-fx-background-color: linear-gradient(to bottom right, #89F7FE, #66A6FF);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.TeacherDashboardController">
+
+    <!-- Sidebar -->
+    <VBox prefWidth="240" spacing="0" style="-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
+
+        <!-- Teacher Info -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 25; -fx-border-color: #334155; -fx-border-width: 0 0 1 0;">
+            <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 40; -fx-padding: 2;">
+                <ImageView fx:id="avatarView" fitHeight="64" fitWidth="64" preserveRatio="true">
+                    <image>
+                        <Image url="@img_2.png" />
+                    </image>
+                </ImageView>
+            </StackPane>
+            <Label fx:id="teacherName" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" text="Dr. Md. Arshad Ali" />
+            <Label fx:id="teacherRole" style="-fx-font-size: 13px; -fx-text-fill: #cbd5e1;" text="Supervisor | CSE Dept" />
+        </VBox>
+
+        <!-- Menu Buttons -->
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Button onAction="#showStudents" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="📊    Dashboard " />
+            <Button onAction="#showPending" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="🔍  All Submissions " />
+            <Button onAction="#showSupervisorSlots" style="-fx-background-color:
+            white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="🕒 Set Weekly Supervisor slots" />
+            <Button onAction="#showPostIdea" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="📢  Post Idea" />
+        </VBox>
+
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Button onAction="#showSettings" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="⚙  Settings" />
+            <Button onAction="#handleLogout" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="🚪 Logout" />
+        </VBox>
+    </VBox>
+
+    <!-- Main Content -->
+    <VBox layoutX="240" style="-fx-background-color: linear-gradient(to bottom right, #DDE1F8, #C5CAE9, #9FA8DA);" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="240" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to right, #141E30, #243B55); -fx-padding: 15 30;">
+            <Label prefHeight="43.0" prefWidth="241.0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" text="Welcome, Professor! 👋">
+                <font>
+                    <Font size="21.0" />
+                </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="916.0" text="Teacher Dashboard" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="31.0" />
+                </font>
+            </Label>
+        </HBox>
+
+        <!-- Summary Cards -->
+        <HBox spacing="20" style="-fx-padding: 25;">
+            <StackPane style="-fx-background-color: linear-gradient(to bottom right, #C8FFD4, #A6F0C6); -fx-background-radius: 12;">
+                <VBox alignment="CENTER" style="-fx-padding: 20;">
+                    <Label style="-fx-font-size: 14px; -fx-font-weight: 500;" text="Total Supervised Projects" />
+                    <Label fx:id="supervisedCount" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="12" />
+                </VBox>
+            </StackPane>
+
+            <StackPane style="-fx-background-color: linear-gradient(to bottom right, #FFE4B5, #FFB347); -fx-background-radius: 12;">
+                <VBox alignment="CENTER" style="-fx-padding: 20;">
+                    <Label style="-fx-font-size: 14px; -fx-font-weight: 500;" text="Pending Approvals" />
+                    <Label fx:id="pendingCount" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="3" />
+                </VBox>
+            </StackPane>
+
+            <StackPane style="-fx-background-color: linear-gradient(to bottom right, #FF4C4C, #B30000); -fx-background-radius: 12;">
+                <VBox alignment="CENTER" style="-fx-padding: 20;">
+                    <Label style="-fx-font-size: 14px; -fx-font-weight: 500; -fx-text-fill: white;" text="High Similarity Alerts" />
+                    <Label fx:id="alertCount" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="1" />
+                </VBox>
+            </StackPane>
+        </HBox>
+
+        <!-- Chart Area -->
+        <HBox alignment="CENTER" spacing="40" style="-fx-padding: 30;">
+            <PieChart fx:id="projectPie" prefHeight="250" prefWidth="250" />
+            <LineChart fx:id="studentProgressChart" prefHeight="250" prefWidth="500">
+                <xAxis>
+                    <CategoryAxis label="Month" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Projects Completed" />
+                </yAxis>
+            </LineChart>
+        </HBox>
+
+        <!-- Recent Activities Section -->
+        <VBox spacing="15" style="-fx-padding: 20 30;">
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Recent Activities" />
+            <VBox spacing="10">
+                <HBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 15;">
+                    <Label style="-fx-text-fill: #3b82f6; -fx-font-weight: bold;" text="•" />
+                    <Label style="-fx-text-fill: #374151;" text="Student John Doe submitted Project Proposal" />
+                    <Label style="-fx-text-fill: #6b7280; -fx-font-size: 12px;" text="2 hours ago" />
+                </HBox>
+                <HBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 15;">
+                    <Label style="-fx-text-fill: #10b981; -fx-font-weight: bold;" text="•" />
+                    <Label style="-fx-text-fill: #374151;" text="Project 'AI Research' similarity check completed" />
+                    <Label style="-fx-text-fill: #6b7280; -fx-font-size: 12px;" text="5 hours ago" />
+                </HBox>
+                <HBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 15;">
+                    <Label style="-fx-text-fill: #f59e0b; -fx-font-weight: bold;" text="•" />
+                    <Label style="-fx-text-fill: #374151;" text="Meeting scheduled with Group Alpha" />
+                    <Label style="-fx-text-fill: #6b7280; -fx-font-size: 12px;" text="1 day ago" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</AnchorPane>
