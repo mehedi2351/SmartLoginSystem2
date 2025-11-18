@@ -46,7 +46,7 @@ public class AllSubmissionController {
         ObservableList<Submission> submissions = loadSampleData();
         submissionTable.setItems(submissions);
 
-        System.out.println("Loaded submissions: " + submissions.size());
+      //  System.out.println("Loaded submissions: " + submissions.size());
     }
 
     private ObservableList<Submission> loadSampleData() {
@@ -54,7 +54,8 @@ public class AllSubmissionController {
 
         submissions.add(new Submission("Mehedi Hasan", "Smart Thesis Manager",
                 "2025-11-05", "Pending"));
-        submissions.add(new Submission("Rafi Ahmed", "IoT Health Monitoring", "2025-11-04", "Approved"));
+        submissions.add(new Submission("Rafi Ahmed",
+                "IoT Health Monitoring", "2025-11-04", "Approved"));
         submissions.add(new Submission("Sadia Khan", "AI Chatbot System", "2025-11-03", "Rejected"));
         submissions.add(new Submission("Nusrat Jahan", "E-Learning Platform", "2025-11-02", "Pending"));
 

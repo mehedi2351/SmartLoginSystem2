@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="510.0" prefWidth="835.0" style="-fx-background-color: linear-gradient(to bottom right, #DDE1F8, #C5CAE9, #9FA8DA);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.AdminDashboradController">
+
+    <children>
+
+        <!-- ================= LEFT SIDEBAR ================= -->
+        <VBox alignment="TOP_CENTER" prefHeight="591.0" prefWidth="134.0" spacing="10" style="-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);">
+
+            <padding>
+                <Insets bottom="10" />
+            </padding>
+
+            <children>
+
+                <!-- Profile Section -->
+                <StackPane alignment="CENTER" prefHeight="100">
+                    <children>
+                        <Circle fill="white" radius="28" />
+                        <ImageView fitHeight="60" fitWidth="60" preserveRatio="true">
+                            <image>
+                                <Image url="@img_1.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+
+                <!-- Small Icon Box -->
+                <StackPane prefHeight="40" style="-fx-background-radius: 15; -fx-background-color: white; -fx-padding: 10;">
+                    <children>
+                        <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                            <image>
+                                <Image url="@img_2.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+
+                <!-- Profile Name -->
+                <Label alignment="CENTER" style="-fx-text-fill: white;" text="Admin Panel">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="11" />
+                    </font>
+                </Label>
+
+            </children>
+
+        </VBox>
+
+        <!-- ================= TOP HEADER ================= -->
+        <HBox layoutX="135.0" layoutY="-2.0" prefHeight="79.0" prefWidth="871.0" style="-fx-background-color: linear-gradient(to right, #141E30, #243B55);" />
+
+        <!-- ================= DASHBOARD CARDS ================= -->
+        <HBox layoutX="142" layoutY="90" spacing="20">
+
+            <!-- Red Card -->
+            <StackPane prefHeight="100" prefWidth="160" style="-fx-background-radius: 20;                               -fx-background-color: linear-gradient(to bottom, #ffebee, #ffcdd2, #ef9a9a, #e57373, #ef5350, #f44336, #e53935, #d32f2f);">
+            </StackPane>
+
+            <!-- Green Card -->
+            <StackPane prefHeight="100" prefWidth="160" style="-fx-background-radius: 20;                               -fx-background-color: linear-gradient(to bottom, #e8f5e9, #c8e6c9, #a5d6a7, #81c784, #66bb6a, #4caf50, #43a047, #388e3c);">
+            </StackPane>
+
+        </HBox>
+
+        <!-- ================= TABLE SECTION ================= -->
+        <VBox layoutX="139.0" layoutY="200" prefHeight="391.0" prefWidth="871.0" style="-fx-background-color: white;                      -fx-background-radius: 12;                      -fx-padding: 15;                      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 4);">
+
+            <children>
+
+                <!-- TOP BUTTONS -->
+                <HBox alignment="CENTER_RIGHT" prefWidth="700" spacing="10">
+                    <children>
+                        <Button fx:id="approveAllBtn" style="-fx-background-color:#4CAF50; -fx-text-fill:white; -fx-background-radius:10; -fx-padding:6 15;" text="✔ Approve All" />
+
+                        <Button fx:id="rejectAllBtn" style="-fx-background-color:#E53935; -fx-text-fill:white; -fx-background-radius:10; -fx-padding:6 15;" text="✘ Reject All" />
+                    </children>
+                </HBox>
+
+                <!-- TABLE -->
+                <TableView fx:id="mytable" prefHeight="367.0" prefWidth="841.0">
+
+                    <columns>
+
+                        <TableColumn fx:id="stduentid" prefWidth="120" text="Student Name" />
+                        <TableColumn fx:id="teacherid" prefWidth="100" text="Teacher Name" />
+                        <TableColumn fx:id="tittleid" prefWidth="120" text="Title" />
+                        <TableColumn fx:id="desid" prefWidth="150" text="Description" />
+                        <TableColumn fx:id="reactid" prefWidth="120" text="React" />
+                        <TableColumn fx:id="viewid" prefWidth="80" text="View" />
+                        <TableColumn fx:id="acid" prefWidth="80" text="AC/RE" />
+
+                    </columns>
+
+                </TableView>
+
+            </children>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

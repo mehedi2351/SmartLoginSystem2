@@ -10,7 +10,8 @@
    <VBox prefHeight="500.0" prefWidth="900.0" />
 
     <!-- Main Content Card -->
-    <StackPane layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 30, 0, 0, 10);">
+    <StackPane layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="800.0"
+               style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 30, 0, 0, 10);" AnchorPane.bottomAnchor="43.60000000000002" AnchorPane.topAnchor="49.60000000000002">
 
         <HBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0">
             <!-- Left Side - Brand Section -->
@@ -57,7 +58,7 @@
             </StackPane>
 
             <!-- Right Side - Login Options -->
-            <VBox alignment="CENTER" prefHeight="406.0" prefWidth="416.0" spacing="30.0" style="-fx-padding: 40;-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);;">
+            <VBox alignment="CENTER" prefHeight="406.0" prefWidth="416.0" spacing="30.0" style="-fx-padding: 40;-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);;" HBox.hgrow="NEVER">
                 <!-- Header -->
                 <VBox alignment="CENTER" spacing="8.0">
                     <Label style="-fx-text-fill: #1e293b; -fx-font-size: 28px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI';" text="Welcome" />
@@ -117,5 +118,3 @@
     <Circle fill="radial-gradient(center 50% 50%, radius 60%, rgba(255,255,255,0.1), transparent)" layoutX="200.0" layoutY="100.0" radius="50.0" />
 
 </AnchorPane>
-
-
