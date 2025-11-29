@@ -1,120 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.MainController">
-   <VBox prefHeight="500.0" prefWidth="900.0" />
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.MainController">
 
-    <!-- Main Content Card -->
-    <StackPane layoutX="50.0" layoutY="50.0" prefHeight="400.0" prefWidth="800.0"
-               style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 30, 0, 0, 10);" AnchorPane.bottomAnchor="43.60000000000002" AnchorPane.topAnchor="49.60000000000002">
+    <!-- Main Content Container -->
+    <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
-        <HBox alignment="CENTER" prefHeight="400.0" prefWidth="800.0">
-            <!-- Left Side - Brand Section -->
-            <StackPane prefWidth="400.0" style="-fx-background-color: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); -fx-background-radius: 20 0 0 20;">
-                <VBox alignment="CENTER" spacing="20.0">
-                    <!-- Logo Container -->
-                    <StackPane style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);">
-                        <ImageView fitHeight="120.0" fitWidth="120.0" preserveRatio="true">
-                            <image>
-                                <Image url="@download (5).png" />
-                            </image>
-                        </ImageView>
-                    </StackPane>
+        <!-- Main Content Card -->
+        <StackPane maxHeight="500.0" maxWidth="1000.0" prefHeight="500.0" prefWidth="1000.0" style="             -fx-background-color: white;             -fx-background-radius: 24;             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 40, 0, 0, 15);             ">
 
-                    <!-- Brand Text -->
+            <HBox alignment="CENTER" prefHeight="500.0" prefWidth="1000.0">
+
+                <!-- Left Side - Brand Section -->
+                <StackPane prefWidth="500.0" style="                     -fx-background-color: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);                     -fx-background-radius: 24 0 0 24;">
+
+                    <VBox alignment="CENTER" spacing="25.0" style="-fx-padding: 40;">
+                        <!-- Logo Container -->
+                        <StackPane style="                             -fx-background-color: white;                             -fx-background-radius: 20;                             -fx-padding: 25;                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 20, 0, 0, 5);">
+
+                            <ImageView fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@download (5).png" />
+                                </image>
+                            </ImageView>
+                        </StackPane>
+
+                        <!-- Brand Text -->
+                        <VBox alignment="CENTER" spacing="12.0">
+                            <Label style="                                 -fx-text-fill: #1e293b;                                 -fx-font-size: 28px;                                 -fx-font-weight: bold;                                 -fx-font-family: 'Segoe UI';" text="Academic Supervisor" />
+
+                            <Label style="                                 -fx-text-fill: #64748b;                                 -fx-font-size: 16px;                                 -fx-font-family: 'Segoe UI';                                 -fx-font-weight: 500;" text="Management Portal" />
+
+                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#667eea" height="3.0" width="80.0" />
+                        </VBox>
+
+                        <!-- Features List -->
+                        <VBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 20 40;">
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <StackPane style="                                     -fx-background-color: #10b981;                                     -fx-background-radius: 50%;                                     -fx-padding: 6;">
+                                    <Label style="                                         -fx-text-fill: white;                                         -fx-font-size: 12px;                                         -fx-font-weight: bold;" text="✓" />
+                                </StackPane>
+                                <Label style="                                     -fx-text-fill: #000000;                                     -fx-font-size: 14px;                                     -fx-font-weight: 600;" text="Secure Authentication" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <StackPane style="                                     -fx-background-color: #3b82f6;                                     -fx-background-radius: 50%;                                     -fx-padding: 6;">
+                                    <Label style="                                         -fx-text-fill: white;                                         -fx-font-size: 12px;                                         -fx-font-weight: bold;" text="✓" />
+                                </StackPane>
+                                <Label style="                                     -fx-text-fill: #000000;                                     -fx-font-size: 14px;                                     -fx-font-weight: 600;" text="Role-based Access Control" />
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <StackPane style="                                     -fx-background-color: #8b5cf6;                                     -fx-background-radius: 50%;                                     -fx-padding: 6;">
+                                    <Label style="                                         -fx-text-fill: white;                                         -fx-font-size: 12px;                                         -fx-font-weight: bold;" text="✓" />
+                                </StackPane>
+                                <Label style="                                     -fx-text-fill: #000000;                                     -fx-font-size: 14px;                                     -fx-font-weight: 600;" text="Real-time Analytics Dashboard" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </StackPane>
+
+                <!-- Right Side - Login Options -->
+                <VBox alignment="CENTER" prefWidth="500.0" spacing="35.0" style="-fx-padding: 50; -fx-background-color: white; -fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);">
+
+                    <!-- Header Section -->
                     <VBox alignment="CENTER" spacing="10.0">
-                        <Label style="-fx-text-fill: #1e293b; -fx-font-size: 24px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI';" text="Smart Supervisor" />
-                        <Label style="-fx-text-fill: #64748b; -fx-font-size: 16px; -fx-font-family: 'Segoe UI'; -fx-font-weight: 500;" text="Management System" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#667eea" height="3.0" width="60.0" />
+                        <Label style="                                  -fx-text-fill: #1e293b;                                                   -fx-font-size: 32px;                             -fx-font-weight: bold;                             -fx-font-family: 'Segoe UI';" text="Welcome Back" />
+
+                        <Label style="                             -fx-text-fill: #000000;                             -fx-font-size: 16px;                             -fx-font-family: 'Segoe UI';                             -fx-alignment: CENTER;" text="Select your role to access the portal" wrapText="true" />
+
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#667eea" height="3.0" style="-fx-effect:                                    dropshadow(gaussian, rgba(102,126,234,0.3), 5, 0, 0, 2);" width="60.0" />
+                    </VBox>
+                      <Button fx:id="teacherBtn" onAction="#openTeacherPanel" prefHeight="74.0" prefWidth="342.0" style="-fx-background-color: linear-gradient(to right, #8B4513, #A0522D); -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(102,126,234,0.4), 15, 0, 0, 6); -fx-border-radius: 12;" text="Faculty Portal">
+            
+                          <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="28.0" preserveRatio="true">
+                                  <image>
+                                      <Image url="@img_3.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+            
+                          <padding>
+                              <Insets left="25.0" right="25.0" />
+                          </padding>
+                      </Button>
+                      <Button fx:id="studentBtn" onAction="#openStudentPanel" prefHeight="74.0" prefWidth="338.0" style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(79,172,254,0.4), 15, 0, 0, 6); -fx-border-radius: 12;" text="Student Portal">
+
+                          <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="28.0" preserveRatio="true">
+                                  <image>
+                                      <Image url="@img_2.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+
+                          <padding>
+                              <Insets left="25.0" right="25.0" />
+                          </padding>
+                      </Button>
+
+                    <!-- Login Buttons Container -->
+                    <VBox alignment="CENTER" prefWidth="350.0" spacing="10.0">
+
+                        <!-- Teacher Panel Button -->
+                        <StackPane />
+                  <Button fx:id="studentBtn1" onAction="#openStudentPanel" prefHeight="73.0" prefWidth="338.0" style="-fx-background-color: #8b5cf6; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(79,172,254,0.4), 15, 0, 0, 6); -fx-border-radius: 12;" text="Student Portal">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" preserveRatio="true">
+                           <image>
+                              <Image url="@img_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="25.0" right="25.0" />
+                     </padding>
+                  </Button>
+
+                        <!-- Student Panel Button -->
+                        <StackPane />
                     </VBox>
 
-                    <!-- Features -->
-                    <VBox alignment="CENTER_LEFT" spacing="12.0" style="-fx-padding: 20;">
-                        <HBox alignment="CENTER_LEFT" spacing="10.0">
-                            <StackPane style="-fx-background-color: #10b981; -fx-background-radius: 12; -fx-padding: 4;">
-                                <Label style="-fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: bold;" text="✓" />
-                            </StackPane>
-                            <Label style="-fx-text-fill: #475569; -fx-font-size: 13px; -fx-font-weight: 500;" text="Secure Authentication" />
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" spacing="10.0">
-                            <StackPane style="-fx-background-color: #3b82f6; -fx-background-radius: 12; -fx-padding: 4;">
-                                <Label style="-fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: bold;" text="✓" />
-                            </StackPane>
-                            <Label style="-fx-text-fill: #475569; -fx-font-size: 13px; -fx-font-weight: 500;" text="Role-based Access" />
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" spacing="10.0">
-                            <StackPane style="-fx-background-color: #8b5cf6; -fx-background-radius: 12; -fx-padding: 4;">
-                                <Label style="-fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: bold;" text="✓" />
-                            </StackPane>
-                            <Label style="-fx-text-fill: #475569; -fx-font-size: 13px; -fx-font-weight: 500;" text="Real-time Analytics" />
-                        </HBox>
+                    <!-- Footer Section -->
+                    <VBox alignment="CENTER" spacing="8.0">
+                        <Label style="                             -fx-text-fill: #000000;                             -fx-font-size: 13px;                             -fx-font-family: 'Segoe UI';" text="Select appropriate role to continue" />
+
+                        <Label style="                             -fx-text-fill: #000000;                             -fx-font-size: 11px;                             -fx-font-family: 'Segoe UI';" text="© 2024 Academic Supervisor Management System | v2.1" />
                     </VBox>
                 </VBox>
-            </StackPane>
-
-            <!-- Right Side - Login Options -->
-            <VBox alignment="CENTER" prefHeight="406.0" prefWidth="416.0" spacing="30.0" style="-fx-padding: 40;-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);;" HBox.hgrow="NEVER">
-                <!-- Header -->
-                <VBox alignment="CENTER" spacing="8.0">
-                    <Label style="-fx-text-fill: #1e293b; -fx-font-size: 28px; -fx-font-weight: bold; -fx-font-family: 'Segoe UI';" text="Welcome" />
-                    <Label style="-fx-text-fill: #64748b; -fx-font-size: 14px; -fx-font-family: 'Segoe UI';" text="Choose your access portal" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#667eea" height="2.0" width="40.0" />
-                </VBox>
-
-                <!-- Buttons Container -->
-                <VBox alignment="CENTER" prefWidth="300.0" spacing="20.0">
-                    <!-- Teacher Panel Button -->
-                    <StackPane>
-                        <Button fx:id="teacherBtn" onAction="#openTeacherPanel" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to right, #667eea, #764ba2); -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(102,126,234,0.3), 10, 0, 0, 4);" text="Teacher Panel">
-                            <graphic>
-                                <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
-                                    <image>
-                                        <Image url="@img_3.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <padding>
-                                <Insets left="20.0" right="20.0" />
-                            </padding>
-                        </Button>
-                        <HBox alignment="CENTER_LEFT" spacing="5.0" style="-fx-padding: 8 0 0 25;" />
-                    </StackPane>
-
-                    <!-- Student Panel Button -->
-                    <StackPane>
-                        <Button fx:id="studentBtn" onAction="#openStudentPanel" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to right, #f093fb, #f5576c); -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(240,147,251,0.3), 10, 0, 0, 4);" text="Student Panel">
-                            <graphic>
-                                <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
-                                    <image>
-                                        <Image url="@img_2.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                            <padding>
-                                <Insets left="20.0" right="20.0" />
-                            </padding>
-                        </Button>
-                        <HBox alignment="CENTER_LEFT" spacing="5.0" style="-fx-padding: 8 0 0 25;" />
-                    </StackPane>
-                </VBox>
-
-                <!-- Footer -->
-                <VBox alignment="CENTER" spacing="3.0">
-                    <Label style="-fx-text-fill: #000000; -fx-font-size: 12px; -fx-font-family: 'Segoe UI';" text="Select your role to continue" />
-                </VBox>
-                 <Label style="-fx-text-fill: #000000; -fx-font-size: 10px; -fx-font-family: 'Segoe UI';" text="© 2024 Smart Supervisor Management System" />
-            </VBox>
-        </HBox>
+            </HBox>
+        </StackPane>
     </StackPane>
 
-    <!-- Decorative Elements -->
-    <Circle fill="radial-gradient(center 50% 50%, radius 60%, rgba(255,255,255,0.15), transparent)" layoutX="700.0" layoutY="380.0" radius="80.0" />
+                   <!-- Background Decorative Elements -->
+    <Circle fill="radial-gradient(center 50% 50%, radius 70%, rgba(255,255,255,0.2), transparent)" layoutX="900.0" layoutY="150.0" radius="120.0" />
 
-    <Circle fill="radial-gradient(center 50% 50%, radius 60%, rgba(255,255,255,0.1), transparent)" layoutX="200.0" layoutY="100.0" radius="50.0" />
+    <Circle fill="radial-gradient(center 50% 50%, radius 70%, rgba(255,255,255,0.15), transparent)" layoutX="300.0" layoutY="550.0" radius="80.0" />
+
+    <Circle fill="radial-gradient(center 50% 50%, radius 70%, rgba(255,255,255,0.1), transparent)" layoutX="150.0" layoutY="100.0" radius="60.0" />
+
+    <!-- Additional subtle elements -->
+    <Rectangle arcHeight="20.0" arcWidth="20.0" fill="rgba(255,255,255,0.05)" height="200.0" layoutX="1000.0" layoutY="450.0" rotate="45.0" width="200.0" />
+
+    <Rectangle arcHeight="20.0" arcWidth="20.0" fill="rgba(255,255,255,0.03)" height="150.0" layoutX="50.0" layoutY="50.0" rotate="30.0" width="150.0" />
 
 </AnchorPane>

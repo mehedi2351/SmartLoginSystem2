@@ -25,6 +25,12 @@ public class TeacherLoginController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Teacher Register");
+        if (stage.isMaximized()) {
+            stage.setMaximized(false); // একটু ছোট করুন
+            stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+        } else {
+            stage.setMaximized(true);
+        }
         stage.show();
     }
 
@@ -36,6 +42,12 @@ public class TeacherLoginController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Teacher Register");
+        if (stage.isMaximized()) {
+            stage.setMaximized(false); // একটু ছোট করুন
+            stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+        } else {
+            stage.setMaximized(true);
+        }
         stage.show();
     }
 }

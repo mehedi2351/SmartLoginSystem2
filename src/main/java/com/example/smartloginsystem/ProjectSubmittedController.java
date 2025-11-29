@@ -23,6 +23,13 @@ public class ProjectSubmittedController {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setTitle("Find Supervisor");
+        if (stage.isMaximized()) {
+            stage.setMaximized(false); // একটু ছোট করুন
+            stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+        } else {
+            stage.setMaximized(true);
+        }
         stage.show();
+
     }
 }

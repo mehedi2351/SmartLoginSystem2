@@ -41,6 +41,10 @@ public class AdminDashboradController implements Initializable {
         reactid.setCellValueFactory(new PropertyValueFactory<>("reactid"));
         viewid.setCellValueFactory(new PropertyValueFactory<>("viewid"));
         acid.setCellValueFactory(new PropertyValueFactory<>("acid"));
+        reactid.setCellValueFactory(new PropertyValueFactory<>("reactBtn"));
+        viewid.setCellValueFactory(new PropertyValueFactory<>("viewBtn"));
+        acid.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
+
 
         mytable.setItems(loadSampleData());
     }
@@ -50,6 +54,110 @@ public class AdminDashboradController implements Initializable {
         ObservableList<Admin> admin = FXCollections.observableArrayList();
 
         admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "mos",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "enan",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "degree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
+                "Mehedi",
+                "Mamun",
+                "Bus Tracking",
+                "Live bus tracking system in campus",
+                "Agree",
+                "view",
+                "ok / rejected"
+        )); admin.add(new Admin(
                 "Mehedi",
                 "Mamun",
                 "Bus Tracking",

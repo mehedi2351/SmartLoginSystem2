@@ -1,118 +1,360 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="846.0" prefWidth="1394.0" style="-fx-background-color: linear-gradient(to bottom right, #89F7FE, #66A6FF);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.TeacherDashboardController">
+<BorderPane prefHeight="850.0" prefWidth="1400.0" style="-fx-background-color: #f1f5f9;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.TeacherDashboardController">
 
-    <!-- Sidebar -->
-    <VBox prefWidth="240" spacing="0" style="-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox prefWidth="260.0" style="-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280);" BorderPane.alignment="CENTER">
 
-        <!-- Teacher Info -->
-        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 25; -fx-border-color: #334155; -fx-border-width: 0 0 1 0;">
-            <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 40; -fx-padding: 2;">
-                <ImageView fx:id="avatarView" fitHeight="64" fitWidth="64" preserveRatio="true">
-                    <image>
-                        <Image url="@img_2.png" />
-                    </image>
-                </ImageView>
-            </StackPane>
-            <Label fx:id="teacherName" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" text="Dr. Md. Arshad Ali" />
-            <Label fx:id="teacherRole" style="-fx-font-size: 13px; -fx-text-fill: #cbd5e1;" text="Supervisor | CSE Dept" />
-        </VBox>
-
-        <!-- Menu Buttons -->
-        <VBox spacing="10" style="-fx-padding: 20;">
-            <Button onAction="#showStudents" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="📊    Dashboard " />
-            <Button onAction="#showPending" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="🔍  All Submissions " />
-            <Button onAction="#showSupervisorSlots" style="-fx-background-color:
-            white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="🕒 Set Weekly Supervisor slots" />
-            <Button onAction="#showPostIdea" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="📢  Post Idea" />
-        </VBox>
-
-        <VBox spacing="10" style="-fx-padding: 20;">
-            <Button onAction="#showSettings" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-size: 13px; -fx-background-radius: 8;" text="⚙  Settings" />
-            <Button onAction="#handleLogout" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" text="🚪 Logout" />
-        </VBox>
-    </VBox>
-
-    <!-- Main Content -->
-    <VBox layoutX="240" style="-fx-background-color: linear-gradient(to bottom right, #DDE1F8, #C5CAE9, #9FA8DA);" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="240" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
-
-        <!-- Header -->
-        <HBox alignment="CENTER_LEFT" style="-fx-background-color: linear-gradient(to right, #141E30, #243B55); -fx-padding: 15 30;">
-            <Label prefHeight="43.0" prefWidth="241.0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;" text="Welcome, Professor! 👋">
-                <font>
-                    <Font size="21.0" />
-                </font>
-            </Label>
-            <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="916.0" text="Teacher Dashboard" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="31.0" />
-                </font>
-            </Label>
-        </HBox>
-
-        <!-- Summary Cards -->
-        <HBox spacing="20" style="-fx-padding: 25;">
-            <StackPane style="-fx-background-color: linear-gradient(to bottom right, #C8FFD4, #A6F0C6); -fx-background-radius: 12;">
-                <VBox alignment="CENTER" style="-fx-padding: 20;">
-                    <Label style="-fx-font-size: 14px; -fx-font-weight: 500;" text="Total Supervised Projects" />
-                    <Label fx:id="supervisedCount" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="12" />
+            <!-- Branding / Profile Area -->
+            <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 40 20 30 20;">
+                <StackPane>
+                    <Circle fill="WHITE" radius="38.0" stroke="#3b82f6" strokeWidth="2.0" />
+                    <ImageView fx:id="avatarView" fitHeight="64.0" fitWidth="64.0" preserveRatio="true">
+                        <image>
+                            <Image url="@img_2.png" />
+                        </image>
+                        <clip>
+                            <Circle centerX="32" centerY="32" radius="32" />
+                        </clip>
+                    </ImageView>
+                </StackPane>
+                <VBox alignment="CENTER" spacing="3.0">
+                    <Label fx:id="teacherName" text="Dr. Md. Arshad Ali" textFill="WHITE">
+                        <font>
+                            <Font name="Segoe UI Bold" size="18.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="teacherRole" text="Supervisor | CSE Dept" textFill="#cbd5e1">
+                        <font>
+                            <Font name="Segoe UI" size="13.0" />
+                        </font>
+                    </Label>
                 </VBox>
-            </StackPane>
+            </VBox>
 
-            <StackPane style="-fx-background-color: linear-gradient(to bottom right, #FFE4B5, #FFB347); -fx-background-radius: 12;">
-                <VBox alignment="CENTER" style="-fx-padding: 20;">
-                    <Label style="-fx-font-size: 14px; -fx-font-weight: 500;" text="Pending Approvals" />
-                    <Label fx:id="pendingCount" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="3" />
+            <Separator opacity="0.2" prefWidth="200.0" />
+
+            <!-- Navigation Menu -->
+            <VBox spacing="8.0" style="-fx-padding: 20 15;" VBox.vgrow="ALWAYS">
+
+                <!-- 1. Dashboard (Active) - White Background -->
+                <Button fx:id="btnDashboard" alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="Infinity" onAction="#showStudents" prefHeight="45.0" style="-fx-background-color: #ffffff; -fx-text-fill: #1e293b; -fx-background-radius: 8; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);" text="📊  Dashboard">
+                    <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                </Button>
+
+                <!-- 2. All Submissions - Transparent -->
+                <Button fx:id="btnPending" alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="Infinity" onAction="#showPending" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0; -fx-background-radius: 8; -fx-cursor: hand;" text="🔍  All Submissions">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                </Button>
+
+                <!-- 3. Supervisor Slots - Transparent -->
+                <Button fx:id="btnSlots" alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="Infinity" onAction="#showSupervisorSlots" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0; -fx-background-radius: 8; -fx-cursor: hand;" text="🕒  Supervisor Slots">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                </Button>
+
+                <!-- 4. Post Idea - Transparent -->
+                <Button fx:id="btnPostIdea" alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="Infinity" onAction="#showPostIdea" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0; -fx-background-radius: 8; -fx-cursor: hand;" text="📢  Post Idea">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                </Button>
+
+                <Pane VBox.vgrow="ALWAYS" /> <!-- Spacer -->
+
+                <!-- Bottom Actions -->
+                <VBox spacing="8.0">
+                    <Button fx:id="btnSettings" alignment="BASELINE_LEFT" graphicTextGap="15.0" maxWidth="Infinity" onAction="#showSettings" prefHeight="45.0" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0; -fx-background-radius: 8; -fx-cursor: hand;" text="⚙  Settings">
+                        <font>
+                            <Font name="Segoe UI Semibold" size="14.0" />
+                        </font>
+                        <padding>
+                            <Insets left="20.0" />
+                        </padding>
+                    </Button>
+                    <Button alignment="CENTER" maxWidth="Infinity" onAction="#handleLogout" prefHeight="45.0" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand; -fx-font-weight: bold;" text="🚪 Logout">
+                        <font>
+                            <Font name="Segoe UI Bold" size="14.0" />
+                        </font>
+                    </Button>
                 </VBox>
-            </StackPane>
-
-            <StackPane style="-fx-background-color: linear-gradient(to bottom right, #FF4C4C, #B30000); -fx-background-radius: 12;">
-                <VBox alignment="CENTER" style="-fx-padding: 20;">
-                    <Label style="-fx-font-size: 14px; -fx-font-weight: 500; -fx-text-fill: white;" text="High Similarity Alerts" />
-                    <Label fx:id="alertCount" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="1" />
-                </VBox>
-            </StackPane>
-        </HBox>
-
-        <!-- Chart Area -->
-        <HBox alignment="CENTER" spacing="40" style="-fx-padding: 30;">
-            <PieChart fx:id="projectPie" prefHeight="250" prefWidth="250" />
-            <LineChart fx:id="studentProgressChart" prefHeight="250" prefWidth="500">
-                <xAxis>
-                    <CategoryAxis label="Month" />
-                </xAxis>
-                <yAxis>
-                    <NumberAxis label="Projects Completed" />
-                </yAxis>
-            </LineChart>
-        </HBox>
-
-        <!-- Recent Activities Section -->
-        <VBox spacing="15" style="-fx-padding: 20 30;">
-            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Recent Activities" />
-            <VBox spacing="10">
-                <HBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 15;">
-                    <Label style="-fx-text-fill: #3b82f6; -fx-font-weight: bold;" text="•" />
-                    <Label style="-fx-text-fill: #374151;" text="Student John Doe submitted Project Proposal" />
-                    <Label style="-fx-text-fill: #6b7280; -fx-font-size: 12px;" text="2 hours ago" />
-                </HBox>
-                <HBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 15;">
-                    <Label style="-fx-text-fill: #10b981; -fx-font-weight: bold;" text="•" />
-                    <Label style="-fx-text-fill: #374151;" text="Project 'AI Research' similarity check completed" />
-                    <Label style="-fx-text-fill: #6b7280; -fx-font-size: 12px;" text="5 hours ago" />
-                </HBox>
-                <HBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 8; -fx-padding: 15;">
-                    <Label style="-fx-text-fill: #f59e0b; -fx-font-weight: bold;" text="•" />
-                    <Label style="-fx-text-fill: #374151;" text="Meeting scheduled with Group Alpha" />
-                    <Label style="-fx-text-fill: #6b7280; -fx-font-size: 12px;" text="1 day ago" />
-                </HBox>
             </VBox>
         </VBox>
-    </VBox>
-</AnchorPane>
+    </left>
+
+    <!-- MAIN CONTENT AREA -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #f1f5f9;">
+            <content>
+                <VBox spacing="30.0" style="-fx-padding: 30; -fx-background-color: linear-gradient(to bottom right, #F0F4FF, #E0E7FF, #C7D2FE);">
+
+                    <!-- Header Section -->
+                    <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: linear-gradient(to right, #141E30, #243B55); -fx-background-radius: 12; -fx-padding: 20;">
+                        <effect>
+                            <DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0">
+                                <color>
+                                    <Color opacity="0.1" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                        <VBox spacing="5.0">
+                            <Label text="Welcome back, Professor! 👋" textFill="WHITE">
+                                <font>
+                                    <Font name="Segoe UI Bold" size="24.0" />
+                                </font>
+                            </Label>
+                            <Label text="Here's what's happening with your students today." textFill="WHITE">
+                                <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                </font>
+                            </Label>
+                        </VBox>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label style="-fx-background-color: #dbeafe; -fx-text-fill: #2563eb; -fx-background-radius: 20; -fx-padding: 5 15;" text="Fall Semester 2025">
+                            <font>
+                                <Font name="Segoe UI Bold" size="12.0" />
+                            </font>
+                        </Label>
+                    </HBox>
+
+                    <!-- KPI Cards Row -->
+                    <HBox spacing="20.0">
+                        <!-- Card 1 -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: linear-gradient(to bottom, #34D399, #059669); -fx-background-radius: 12; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                            <effect>
+                                <DropShadow offsetY="4.0">
+                                    <color>
+                                        <Color opacity="0.1" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <StackPane style="-fx-background-color: #dcfce7; -fx-background-radius: 50; -fx-padding: 10;">
+                                <Label style="-fx-font-size: 20;" text="📚" />
+                            </StackPane>
+                            <VBox>
+                                <Label text="Active Projects" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="supervisedCount" text="12" textFill="#1e293b">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="28.0" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </HBox>
+
+                        <!-- Card 2 -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: linear-gradient(to bottom, #3B82F6, #1D4ED8); -fx-background-radius: 12; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                            <effect>
+                                <DropShadow offsetY="4.0">
+                                    <color>
+                                        <Color opacity="0.1" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <StackPane style="-fx-background-color: #fff7ed; -fx-background-radius: 50; -fx-padding: 10;">
+                                <Label style="-fx-font-size: 20;" text="⏳" />
+                            </StackPane>
+                            <VBox>
+                                <Label text="Pending Approvals" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="pendingCount" text="03" textFill="#1e293b">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="28.0" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </HBox>
+
+                        <!-- Card 3 -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: linear-gradient(to bottom, #991B1B, #7F1D1D); -fx-background-radius: 12; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                            <effect>
+                                <DropShadow offsetY="4.0">
+                                    <color>
+                                        <Color opacity="0.1" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <StackPane style="-fx-background-color: #fee2e2; -fx-background-radius: 50; -fx-padding: 10;">
+                                <Label style="-fx-font-size: 20;" text="⚠️" />
+                            </StackPane>
+                            <VBox>
+                                <Label text="High Similarity Alerts" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="alertCount" text="01" textFill="#ef4444">
+                                    <font>
+                                        <Font name="Segoe UI Bold" size="28.0" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </HBox>
+                    </HBox>
+
+                    <!-- Charts Section -->
+                    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                        <!-- Pie Chart Card -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20;" HBox.hgrow="SOMETIMES">
+                            <effect>
+                                <DropShadow offsetY="2.0">
+                                    <color>
+                                        <Color opacity="0.1" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label text="Project Distribution" textFill="#1e293b">
+                                <font>
+                                    <Font name="Segoe UI Bold" size="16.0" />
+                                </font>
+                            </Label>
+                            <PieChart fx:id="projectPie" labelsVisible="false" prefHeight="250.0" style="-fx-background-color: transparent;" />
+                        </VBox>
+
+                        <!-- Line Chart Card -->
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 20;" HBox.hgrow="ALWAYS">
+                            <effect>
+                                <DropShadow offsetY="2.0">
+                                    <color>
+                                        <Color opacity="0.1" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <Label text="Submission Trends" textFill="#1e293b">
+                                <font>
+                                    <Font name="Segoe UI Bold" size="16.0" />
+                                </font>
+                            </Label>
+                            <LineChart fx:id="studentProgressChart" prefHeight="250.0" style="-fx-background-color: transparent;">
+                                <xAxis>
+                                    <CategoryAxis label="Month" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Submissions" side="LEFT" />
+                                </yAxis>
+                            </LineChart>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Recent Activities List -->
+                    <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25;">
+                        <effect>
+                            <DropShadow offsetY="2.0">
+                                <color>
+                                    <Color opacity="0.1" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                        <Label text="Recent Activities" textFill="#1e293b">
+                            <font>
+                                <Font name="Segoe UI Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Separator />
+
+                        <!-- List Item 1 -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <Circle fill="#3b82f6" radius="4.0" />
+                            <VBox>
+                                <Label text="Student John Doe submitted Project Proposal" textFill="#334155">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label text="2 hours ago • Proposal Review" textFill="#94a3b8">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </HBox>
+
+                        <Separator opacity="0.5" />
+
+                        <!-- List Item 2 -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <Circle fill="#10b981" radius="4.0" />
+                            <VBox>
+                                <Label text="Project 'AI Research' similarity check completed" textFill="#334155">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label text="5 hours ago • Automated Check" textFill="#94a3b8">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </HBox>
+
+                        <Separator opacity="0.5" />
+
+                        <!-- List Item 3 -->
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <Circle fill="#f59e0b" radius="4.0" />
+                            <VBox>
+                                <Label text="Meeting scheduled with Group Alpha" textFill="#334155">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label text="1 day ago • Calendar" textFill="#94a3b8">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

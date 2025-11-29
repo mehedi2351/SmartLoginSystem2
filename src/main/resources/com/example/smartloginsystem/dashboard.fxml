@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="846.0" prefWidth="1394.0" style="-fx-background-color:             linear-gradient(to bottom right, #89F7FE, #66A6FF);;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.DashboardController">
+<AnchorPane prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: linear-gradient(to bottom right, #89F7FE, #66A6FF);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.DashboardController">
 
     <!-- Side Menu Bar -->
-    <VBox layoutY="0.8" prefHeight="777.0" prefWidth="240" spacing="0" style="-fx-background-color:
-    linear-gradient(to bottom right, #134E5E, #71B280); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 0);" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="1.0">
+    <VBox layoutY="0.8" prefHeight="777.0" prefWidth="240" spacing="0" style="-fx-background-color: linear-gradient(to bottom right, #134E5E, #71B280); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 0);" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="1.0">
 
         <!-- Logo Section -->
         <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 25 20; -fx-border-color: #334155; -fx-border-width: 0 0 1 0;">
@@ -33,8 +22,8 @@
                 </ImageView>
             </StackPane>
             <VBox spacing="2">
-                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="SMART THESIS" />
-                <Label style="-fx-font-size: 11px; -fx-text-fill: #94a3b8;" text="Dashboard" />
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="SMART THESIS" />
+                <Label style="-fx-font-size: 11px; -fx-text-fill: #94a3b8; -fx-font-family: 'Segoe UI';" text="Dashboard" />
             </VBox>
         </HBox>
 
@@ -48,63 +37,62 @@
                 </ImageView>
             </StackPane>
             <VBox alignment="CENTER" spacing="2">
-                <Label fx:id="userNameLabel" style="-fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: white;" text="Mehedi Hassan" />
-                <Label fx:id="userRoleLabel" style="-fx-font-size: 11px; -fx-text-fill: #94a3b8;" text="Bsc in CSE, 2025" />
+                <Label fx:id="userNameLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="Mehedi Hassan" textOverrun="WORD_ELLIPSIS" wrapText="true" />
+                <Label fx:id="userRoleLabel" style="-fx-font-size: 12px; -fx-text-fill: #94a3b8; -fx-font-family: 'Segoe UI';" text="Bsc in CSE, 2025" />
             </VBox>
         </VBox>
 
         <!-- Quick Actions Menu -->
         <VBox spacing="2" style="-fx-padding: 15 0;" VBox.vgrow="ALWAYS">
-            <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-padding: 10 20 5 20;" text="QUICK ACTIONS" />
+            <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-padding: 10 20 5 20; -fx-font-family: 'Segoe UI';" text="QUICK ACTIONS" />
 
             <!-- Menu Items -->
-            <VBox spacing="2" style="-fx-padding: 0 10;">
-                <!-- Submit New Idea -->
-                <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="202.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 12 15; -fx-cursor: hand;">
-                    <StackPane prefHeight="45.0" prefWidth="31.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 4;">
-                        <Label style="-fx-font-size: 12px;" text="📝" />
+            <VBox spacing="8" style="-fx-padding: 0 10;">
+                <!-- Student Dashboard -->
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="202.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 8 15; -fx-cursor: hand;">
+                    <StackPane prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 6;">
+                        <Label style="-fx-font-size: 14px;" text="📝" />
                     </StackPane>
-                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size: 13px; -fx-font-weight: 500; -fx-padding: 0;" text="Student Dashboard" />
+                    <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="130.0" style="                         -fx-background-color: linear-gradient(to right, #3B82F6, #1D4ED8);                         -fx-text-fill: white;                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-background-radius: 6;                         -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.3), 5, 0, 0, 2);                         -fx-cursor: hand;" text="Student Dashboard" />
                 </HBox>
 
                 <!-- Find Supervisor -->
-                <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="209.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 12 15; -fx-cursor: hand;">
-                    <StackPane prefHeight="20.0" prefWidth="26.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 4;">
-                        <Label style="-fx-font-size: 12px;" text="👨‍🏫" />
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="209.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 8 15; -fx-cursor: hand;">
+                    <StackPane prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 6;">
+                        <Label style="-fx-font-size: 14px;" text="👨‍🏫" />
                     </StackPane>
-                    <Button mnemonicParsing="false" onAction="#openFindSupervisor" prefHeight="25.0" prefWidth="107.0" style="-fx-background-color: #ffffff; -fx-text-fill: #000000; -fx-font-size: 13px; -fx-font-weight: 500; -fx-padding: 0;" text="Find Supervisor" />
+                    <Button mnemonicParsing="false" onAction="#openFindSupervisor" prefHeight="32.0" prefWidth="130.0" style="                         -fx-background-color: linear-gradient(to right, #10B981, #059669);                         -fx-text-fill: white;                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-background-radius: 6;                         -fx-effect: dropshadow(gaussian, rgba(16,185,129,0.3), 5, 0, 0, 2);                         -fx-cursor: hand;" text="Find Supervisor" />
                 </HBox>
 
-                <!-- View Deadlines -->
-                <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="235.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 12 15; -fx-cursor: hand;">
-                    <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 4;">
-                        <Label style="-fx-font-size: 12px;" text="📅" />
+                <!-- View Project Ideas -->
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="235.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 8 15; -fx-cursor: hand;">
+                    <StackPane prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 6;">
+                        <Label style="-fx-font-size: 14px;" text="📅" />
                     </StackPane>
-               <Button mnemonicParsing="false" onAction="#openproject" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color:#ffffff" text="View Project Ideas" />
-                    <!--<Label style="-fx-font-size: 13px; -fx-font-weight: 500; -fx-text-fill: #e2e8f0;" /> -->
+                    <Button mnemonicParsing="false" onAction="#openproject" prefHeight="32.0" prefWidth="130.0" style="                         -fx-background-color: linear-gradient(to right, #F59E0B, #D97706);                         -fx-text-fill: white;                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-background-radius: 6;                         -fx-effect: dropshadow(gaussian, rgba(245,158,11,0.3), 5, 0, 0, 2);                         -fx-cursor: hand;" text="View Project Ideas" />
                 </HBox>
 
-                <!-- My Projects -->
-                <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="228.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 12 15; -fx-cursor: hand;">
-                    <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 4;">
-                        <Label style="-fx-font-size: 12px;" text="📂" />
+                <!-- Project Submitted -->
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="228.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 8 15; -fx-cursor: hand;">
+                    <StackPane prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 6;">
+                        <Label style="-fx-font-size: 14px;" text="📂" />
                     </StackPane>
-               <Button mnemonicParsing="false" onAction="#opensubmitted" prefHeight="25.0" prefWidth="110.0" text="project submitted" textFill="#000000f7" />
+                    <Button mnemonicParsing="false" onAction="#opensubmitted" prefHeight="32.0" prefWidth="130.0" style="                         -fx-background-color: linear-gradient(to right, #8B5CF6, #7C3AED);                         -fx-text-fill: white;                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-background-radius: 6;                         -fx-effect: dropshadow(gaussian, rgba(139,92,246,0.3), 5, 0, 0, 2);                         -fx-cursor: hand;" text="Project Submitted" />
                 </HBox>
 
                 <!-- Settings -->
-                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="188.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 12 15; -fx-cursor: hand;">
-                    <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 4;">
-                        <Label prefHeight="18.0" prefWidth="26.0" style="-fx-font-size: 12px;" text="⚙️" />
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="188.0" spacing="12" style="-fx-background-color: transparent; -fx-background-radius: 8; -fx-padding: 8 15; -fx-cursor: hand;">
+                    <StackPane prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: #ffffff; -fx-background-radius: 6; -fx-padding: 6;">
+                        <Label prefHeight="36.0" prefWidth="20.0" style="-fx-font-size: 14px;" text="⚙️" />
                     </StackPane>
-               <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color:#ffffff" text="Setting" />
+                    <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="130.0" style="                         -fx-background-color: linear-gradient(to right, #6B7280, #4B5563);                         -fx-text-fill: white;                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-background-radius: 6;                         -fx-effect: dropshadow(gaussian, rgba(107,114,128,0.3), 5, 0, 0, 2);                         -fx-cursor: hand;" text="Settings" />
                 </HBox>
             </VBox>
         </VBox>
 
         <!-- Logout Button -->
-        <VBox prefHeight="65.0" prefWidth="240.0" style="-fx-padding: 20; -fx-background-radius: 5; -fx-border-width: 1 0 0 0;">
-            <Button onAction="#handleLogout" style="-fx-background-color: #ffffff; -fx-text-fill: #94a3b8; -fx-border-color: #334155; -fx-border-radius: 6; -fx-border-width: 1; -fx-padding: 8; -fx-font-size: 12px; -fx-font-weight: 500;" text="Logout" textFill="WHITE" />
+        <VBox prefHeight="65.0" prefWidth="240.0" style="-fx-padding: 20;">
+            <Button onAction="#handleLogout" prefHeight="40.0" prefWidth="200.0" style="                 -fx-background-color: linear-gradient(to right, #EF4444, #DC2626);                 -fx-text-fill: white;                 -fx-font-size: 14px;                 -fx-font-weight: bold;                 -fx-background-radius: 8;                 -fx-effect: dropshadow(gaussian, rgba(239,68,68,0.3), 5, 0, 0, 2);                 -fx-cursor: hand;" text="Logout" />
         </VBox>
     </VBox>
 
@@ -112,82 +100,79 @@
     <VBox layoutX="240" spacing="0" style="-fx-background-color: #f8fafc;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="240" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
 
         <!-- Top Header -->
-        <HBox alignment="CENTER_LEFT" spacing="0" style="-fx-background-color:
-        linear-gradient(to right, #141E30, #243B55); -fx-padding: 0 30; -fx-pref-height: 70; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 2);">
-            <VBox spacing="2" style="-fx-background-radius: 5;">
-                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Welcome back, Mehedi! 👋" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-                <Label style="-fx-font-size: 12px; -fx-text-fill: #ffffff;" text="Here's your thesis progress overview" />
+        <HBox alignment="CENTER_LEFT" prefHeight="97.0" prefWidth="1162.0" spacing="0" style="-fx-background-color: linear-gradient(to right, #141E30, #243B55); -fx-padding: 0 30; -fx-pref-height: 80; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+            <VBox prefHeight="90.0" prefWidth="303.0" spacing="4" style="-fx-background-radius: 5;">
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-font-family: 'Segoe UI';" text="Welcome back, Mehedi! 👋" />
+                <Label prefHeight="18.0" prefWidth="244.0" style="-fx-font-size: 14px; -fx-text-fill: #E2E8F0; -fx-font-family: 'Segoe UI';" text="Here's your thesis progress overview" />
             </VBox>
-            <Region style="-fx-background-radius: 5;" HBox.hgrow="ALWAYS" />
+            <Region prefHeight="101.0" prefWidth="585.0" HBox.hgrow="ALWAYS" />
             <HBox alignment="CENTER_RIGHT" spacing="15">
-                <StackPane style="-fx-background-size: 5; -fx-background-radius: 8; -fx-padding: 8 12;" />
-                <StackPane style="-fx-background-color: #f1f5f9; -fx-background-radius: 8; -fx-padding: 8 12;">
-                    <Label style="-fx-font-size: 12px; -fx-text-fill: #475569; -fx-font-weight: 500;" text="🕒 Last updated: 2 hours ago" />
+                <StackPane style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 10; -fx-padding: 10 15;">
+                    <Label style="-fx-font-size: 13px; -fx-text-fill: #F1F5F9; -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="🕒 Last updated: 2 hours ago" />
                 </StackPane>
             </HBox>
         </HBox>
 
         <!-- Main Content -->
-        <VBox spacing="25" style="-fx-padding: 25; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 3);; -fx-background-color: linear-gradient(to bottom right, #DDE1F8, #C5CAE9, #9FA8DA);;" VBox.vgrow="ALWAYS">
+        <VBox prefHeight="819.0" prefWidth="1146.0" spacing="25" style="-fx-padding: 30; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5); -fx-background-color: linear-gradient(to bottom right, #F0F4FF, #E0E7FF, #C7D2FE);" VBox.vgrow="ALWAYS">
 
             <!-- Summary Cards Row -->
-            <HBox prefHeight="120" spacing="20">
+            <HBox prefHeight="130" spacing="20">
                 <!-- Submitted Ideas Card -->
-                <StackPane style="-fx-background-color: linear-gradient(to bottom right, #3E5151, #DECBA4); -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2); -fx-pref-width: 230;">
-                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20;">
-                        <StackPane style="-fx-background-color: #dbeafe; -fx-background-radius: 10; -fx-padding: 12;">
-                            <Label style="-fx-font-size: 16px;" text="📝" />
+                <StackPane style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 8); -fx-pref-width: 250;">
+                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 25; -fx-background-color: linear-gradient(to bottom, #3B82F6, #1D4ED8);; -fx-background-radius: 20;">
+                        <StackPane style="-fx-background-color: rgba(255,255,255,0.2); -fx-background-radius: 12; -fx-padding: 12;">
+                            <Label style="-fx-font-size: 20px; -fx-text-fill: white;" text="📝" />
                         </StackPane>
-                        <VBox spacing="4">
-                            <Label style="-fx-font-size: 13px;
-                            -fx-text-fill: #ffffff; -fx-font-weight: 500;" text="Submitted Ideas" textFill="WHITE" />
-                            <Label fx:id="submittedCount" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1e40af;" text="3 Ideas" />
-                            <Label style="-fx-font-size: 11px; -fx-text-fill: #10b981; -fx-font-weight: 500;" text="+1 this week" />
+                        <VBox spacing="6">
+                            <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.9); -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="Submitted Ideas" />
+                            <Label fx:id="submittedCount" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="3 Ideas" />
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #A5F3FC; -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="+1 this week ↗" />
                         </VBox>
                     </HBox>
                 </StackPane>
 
                 <!-- Pending Approvals Card -->
-                <StackPane style="-fx-background-color:linear-gradient(to bottom right, #000000, #434343);                     ; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2); -fx-pref-width: 230;">
-                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20;">
-                        <StackPane style="-fx-background-color: #fef3c7; -fx-background-radius: 10; -fx-padding: 12;">
-                            <Label style="-fx-font-size: 16px;" text="⏳" />
+                <StackPane style="-fx-background-color: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 8); -fx-pref-width: 250;">
+                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 25; -fx-background-color: linear-gradient(to bottom, #FDE047, #F59E0B);; -fx-background-radius: 20;">
+                        <StackPane style="-fx-background-color: rgba(255,255,255,0.2); -fx-background-radius: 12; -fx-padding: 12;">
+                            <Label style="-fx-font-size: 20px; -fx-text-fill: white;" text="⏳" />
                         </StackPane>
-                        <VBox spacing="4">
-                            <Label style="-fx-font-size: 13px; -fx-text-fill: #ffffff; -fx-font-weight: 500;" text="Pending Approvals" />
-                            <Label fx:id="pendingCount" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #d97706;" text="2 Pending" />
-                            <Label style="-fx-font-size: 11px; -fx-text-fill: #f59e0b; -fx-font-weight: 500;" text="Awaiting review" />
+                        <VBox spacing="6">
+                            <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.9); -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="Pending Approvals" />
+                            <Label fx:id="pendingCount" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="2 Pending" />
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #FDE68A; -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="Awaiting review ⏰" />
                         </VBox>
                     </HBox>
                 </StackPane>
 
                 <!-- Approved Projects Card -->
-                <StackPane style="-fx-background-color:   linear-gradient(to bottom right, #C8FFD4, #A6F0C6); -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2); -fx-pref-width: 230;">
-                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20;">
-                        <StackPane style="-fx-background-color: #d1fae5; -fx-background-radius: 10; -fx-padding: 12;">
-                            <Label style="-fx-font-size: 16px;" text="✅" />
+                <StackPane style="-fx-background-color: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 8); -fx-pref-width: 250;">
+                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 25; -fx-background-color: linear-gradient(to bottom, #34D399, #059669);; -fx-background-radius: 20;">
+                        <StackPane style="-fx-background-color: rgba(255,255,255,0.2); -fx-background-radius: 12; -fx-padding: 12;">
+                            <Label style="-fx-font-size: 20px; -fx-text-fill: white;" text="✅" />
                         </StackPane>
-                        <VBox spacing="4">
-                            <Label style="-fx-font-size: 13px; -fx-text-fill: #000000; -fx-font-weight: 500;" text="Approved Projects" />
-                            <Label fx:id="approvedCount" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #059669;" text="1 Approved" />
-                            <Label style="-fx-font-size: 11px; -fx-text-fill: #10b981; -fx-font-weight: 500;" text="Ready to start" />
+                        <VBox spacing="6">
+                            <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.9); -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="Approved Projects" />
+                            <Label fx:id="approvedCount" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="1 Approved" />
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #A7F3D0; -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="Ready to start 🚀" />
                         </VBox>
                     </HBox>
                 </StackPane>
 
                 <!-- Supervisor Requests Card -->
-                <StackPane style="-fx-background-color: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);-fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2); -fx-pref-width: 230;">
-                    <HBox alignment="CENTER_LEFT" prefHeight="120.0" prefWidth="256.0" spacing="15" style="-fx-padding: 20;">
-                        <StackPane style="-fx-background-color: #e9d5ff; -fx-background-radius: 10; -fx-padding: 12;">
-                            <Label style="-fx-font-size: 16px;" text="👨‍🏫" />
+                <StackPane style="-fx-background-color: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 8); -fx-pref-width: 250;">
+                    <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 25; -fx-background-color: linear-gradient(to bottom, #991B1B, #7F1D1D);; -fx-background-radius: 20;">
+                        <StackPane style="-fx-background-color: rgba(255,255,255,0.2); -fx-background-radius: 12; -fx-padding: 12;">
+                            <Label style="-fx-font-size: 20px; -fx-text-fill: white;" text="👨‍🏫" />
                         </StackPane>
-                        <VBox spacing="4">
-                            <Label style="-fx-font-size: 13px; -fx-text-fill: #ffffff; -fx-font-weight: 500;" text="Supervisor Requests" />
-                            <Label fx:id="supervisorReq" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #7c3aed;" text="1 Active" />
-                            <Label style="-fx-font-size: 11px; -fx-text-fill: #8b5cf6; -fx-font-weight: 500;" text="In progress" />
+                        <VBox spacing="6">
+                            <Label style="-fx-font-size: 14px; -fx-text-fill: rgba(255,255,255,0.9); -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="Rejected Ideas">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font></Label>
+                            <Label fx:id="supervisorReq" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="1 Active" />
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #DDD6FE; -fx-font-weight: 600; -fx-font-family: 'Segoe UI';" text="In progress 📈" />
                         </VBox>
                     </HBox>
                 </StackPane>
@@ -196,51 +181,51 @@
             <!-- Charts and Content Area -->
             <HBox spacing="20">
                 <!-- Left Column - Activity & Suggestions -->
-                <VBox prefWidth="380" spacing="20">
+                <VBox prefWidth="400" spacing="20">
                     <!-- Recent Activity -->
-                    <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2);" VBox.vgrow="ALWAYS">
-                        <VBox spacing="12" style="-fx-padding: 20;">
-                            <HBox alignment="CENTER_LEFT" spacing="8">
-                                <Rectangle arcHeight="5" arcWidth="5" fill="#2563eb" height="16" width="4" />
-                                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Recent Activity" />
+                    <StackPane style="-fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);" VBox.vgrow="ALWAYS">
+                        <VBox spacing="15" style="-fx-padding: 25;">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Rectangle arcHeight="5" arcWidth="5" fill="#2563eb" height="20" width="4" />
+                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Recent Activity" />
                             </HBox>
-                            <ListView fx:id="recentList" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-pref-height: 200; -fx-font-size: 13px;" />
+                            <ListView fx:id="recentList" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-pref-height: 200; -fx-font-size: 14px; -fx-font-family: 'Segoe UI';" />
                         </VBox>
                     </StackPane>
 
                     <!-- Supervisor Suggestions -->
-                    <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2);">
-                        <VBox spacing="12" style="-fx-padding: 20;">
-                            <HBox alignment="CENTER_LEFT" spacing="8">
-                                <Rectangle arcHeight="5" arcWidth="5" fill="#10b981" height="16" width="4" />
-                                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Supervisor Suggestions" />
+                    <StackPane style="-fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);">
+                        <VBox spacing="15" style="-fx-padding: 25;">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Rectangle arcHeight="5" arcWidth="5" fill="#10b981" height="20" width="4" />
+                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Supervisor Suggestions" />
                             </HBox>
-                            <VBox spacing="12">
+                            <VBox spacing="15">
                                 <HBox alignment="CENTER_LEFT" spacing="12">
-                                    <StackPane style="-fx-background-color: #2563eb; -fx-background-radius: 6; -fx-padding: 6 10;">
-                                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: white;" text="92%" />
+                                    <StackPane style="-fx-background-color: #2563eb; -fx-background-radius: 8; -fx-padding: 8 12;">
+                                        <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="92%" />
                                     </StackPane>
-                                    <VBox spacing="1">
-                                        <Label style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Dr. Rahman" />
-                                        <Label style="-fx-font-size: 12px; -fx-text-fill: #64748b;" text="AI, Machine Learning, IOT" />
+                                    <VBox spacing="2">
+                                        <Label style="-fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Dr. Rahman" />
+                                        <Label style="-fx-font-size: 13px; -fx-text-fill: #64748b; -fx-font-family: 'Segoe UI';" text="AI, Machine Learning, IOT" />
                                     </VBox>
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" spacing="12">
-                                    <StackPane style="-fx-background-color: #f59e0b; -fx-background-radius: 6; -fx-padding: 6 10;">
-                                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: white;" text="80%" />
+                                    <StackPane style="-fx-background-color: #f59e0b; -fx-background-radius: 8; -fx-padding: 8 12;">
+                                        <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="80%" />
                                     </StackPane>
-                                    <VBox spacing="1">
-                                        <Label style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Prof. Ahmed" />
-                                        <Label style="-fx-font-size: 12px; -fx-text-fill: #64748b;" text="Data Mining, Big Data" />
+                                    <VBox spacing="2">
+                                        <Label style="-fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Prof. Ahmed" />
+                                        <Label style="-fx-font-size: 13px; -fx-text-fill: #64748b; -fx-font-family: 'Segoe UI';" text="Data Mining, Big Data" />
                                     </VBox>
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" spacing="12">
-                                    <StackPane style="-fx-background-color: #8b5cf6; -fx-background-radius: 6; -fx-padding: 6 10;">
-                                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: white;" text="75%" />
+                                    <StackPane style="-fx-background-color: #8b5cf6; -fx-background-radius: 8; -fx-padding: 8 12;">
+                                        <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white; -fx-font-family: 'Segoe UI';" text="75%" />
                                     </StackPane>
-                                    <VBox spacing="1">
-                                        <Label style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Ms. Farzana" />
-                                        <Label style="-fx-font-size: 12px; -fx-text-fill: #64748b;" text="NLP, Web Development" />
+                                    <VBox spacing="2">
+                                        <Label style="-fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Ms. Farzana" />
+                                        <Label style="-fx-font-size: 13px; -fx-text-fill: #64748b; -fx-font-family: 'Segoe UI';" text="NLP, Web Development" />
                                     </VBox>
                                 </HBox>
                             </VBox>
@@ -251,20 +236,20 @@
                 <!-- Right Column - Charts & Notifications -->
                 <VBox spacing="20" VBox.vgrow="ALWAYS">
                     <!-- Analytics Charts -->
-                    <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2);" VBox.vgrow="ALWAYS">
-                        <VBox spacing="12" style="-fx-padding: 20;">
-                            <HBox alignment="CENTER_LEFT" spacing="8">
-                                <Rectangle arcHeight="5" arcWidth="5" fill="#8b5cf6" height="16" width="4" />
-                                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Project Analytics" />
+                    <StackPane style="-fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);" VBox.vgrow="ALWAYS">
+                        <VBox spacing="15" style="-fx-padding: 25;">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Rectangle arcHeight="5" arcWidth="5" fill="#8b5cf6" height="20" width="4" />
+                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Project Analytics" />
                             </HBox>
-                            <HBox alignment="CENTER" spacing="20">
-                                <PieChart fx:id="statusPie" legendVisible="false" prefHeight="200" prefWidth="200" style="-fx-background-color: transparent;" />
-                                <LineChart fx:id="ideasChart" animated="false" createSymbols="true" prefHeight="200" prefWidth="400" style="-fx-background-color: transparent;">
+                            <HBox alignment="CENTER" spacing="25">
+                                <PieChart fx:id="statusPie" legendVisible="false" prefHeight="220" prefWidth="220" style="-fx-background-color: transparent;" />
+                                <LineChart fx:id="ideasChart" animated="false" createSymbols="true" prefHeight="220" prefWidth="400" style="-fx-background-color: transparent;">
                                     <xAxis>
-                                        <CategoryAxis label="Month" style="-fx-tick-label-fill: #64748b; -fx-font-size: 11px;" />
+                                        <CategoryAxis label="Month" style="-fx-tick-label-fill: #64748b; -fx-font-size: 12px; -fx-font-family: 'Segoe UI';" />
                                     </xAxis>
                                     <yAxis>
-                                        <NumberAxis label="Ideas" style="-fx-tick-label-fill: #64748b; -fx-font-size: 11px;" />
+                                        <NumberAxis label="Ideas" style="-fx-tick-label-fill: #64748b; -fx-font-size: 12px; -fx-font-family: 'Segoe UI';" />
                                     </yAxis>
                                 </LineChart>
                             </HBox>
@@ -272,29 +257,29 @@
                     </StackPane>
 
                     <!-- Notifications -->
-                    <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 2);">
-                        <VBox spacing="12" style="-fx-padding: 20;">
-                            <HBox alignment="CENTER_LEFT" spacing="8">
-                                <Rectangle arcHeight="5" arcWidth="5" fill="#ef4444" height="16" width="4" />
-                                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Important Notifications" />
+                    <StackPane style="-fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 5);">
+                        <VBox spacing="15" style="-fx-padding: 25;">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Rectangle arcHeight="5" arcWidth="5" fill="#ef4444" height="20" width="4" />
+                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Important Notifications" />
                             </HBox>
-                            <VBox spacing="10">
+                            <VBox spacing="12">
                                 <HBox alignment="CENTER_LEFT" spacing="12">
-                                    <StackPane style="-fx-background-color: #fef3c7; -fx-background-radius: 8; -fx-padding: 6;">
-                                        <Label style="-fx-font-size: 12px;" text="⏰" />
+                                    <StackPane style="-fx-background-color: #fef3c7; -fx-background-radius: 10; -fx-padding: 8;">
+                                        <Label style="-fx-font-size: 14px;" text="⏰" />
                                     </StackPane>
-                                    <VBox spacing="1">
-                                        <Label style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Proposal Submission Deadline" />
-                                        <Label style="-fx-font-size: 12px; -fx-text-fill: #ef4444; -fx-font-weight: 500;" text="25 October 2025 - 11:59 PM" />
+                                    <VBox spacing="2">
+                                        <Label style="-fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Proposal Submission Deadline" />
+                                        <Label style="-fx-font-size: 13px; -fx-text-fill: #ef4444; -fx-font-weight: 500; -fx-font-family: 'Segoe UI';" text="25 October 2025 - 11:59 PM" />
                                     </VBox>
                                 </HBox>
                                 <HBox alignment="CENTER_LEFT" spacing="12">
-                                    <StackPane style="-fx-background-color: #d1fae5; -fx-background-radius: 8; -fx-padding: 6;">
-                                        <Label style="-fx-font-size: 12px;" text="✅" />
+                                    <StackPane style="-fx-background-color: #d1fae5; -fx-background-radius: 10; -fx-padding: 8;">
+                                        <Label style="-fx-font-size: 14px;" text="✅" />
                                     </StackPane>
-                                    <VBox spacing="1">
-                                        <Label style="-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #1e293b;" text="Project Approved Successfully" />
-                                        <Label style="-fx-font-size: 12px; -fx-text-fill: #10b981; -fx-font-weight: 500;" text="Smart Lab Resource Manager" />
+                                    <VBox spacing="2">
+                                        <Label style="-fx-font-size: 14px; -fx-font-weight: 600; -fx-text-fill: #1e293b; -fx-font-family: 'Segoe UI';" text="Project Approved Successfully" />
+                                        <Label style="-fx-font-size: 13px; -fx-text-fill: #10b981; -fx-font-weight: 500; -fx-font-family: 'Segoe UI';" text="Smart Lab Resource Manager" />
                                     </VBox>
                                 </HBox>
                             </VBox>

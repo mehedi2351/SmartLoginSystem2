@@ -30,7 +30,7 @@ public class StudentLoginController {
     private Scene scene;
     private Parent root;
 
-    private final String STUDENTS_FILE = "students.json"; // Same path
+    private final String STUDENTS_FILE = "students.json";
 
     @FXML
     public void handleLogin(ActionEvent event) throws IOException {
@@ -58,6 +58,13 @@ public class StudentLoginController {
 
         if (found) {
             switchScene(event, "dashboard.fxml", "Dashboard");
+            if (stage.isMaximized()) {
+                stage.setMaximized(false); // একটু ছোট করুন
+                stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+            } else {
+                stage.setMaximized(true);
+            }
+
         } else {
             showAlert("Wrong Username or Password");
         }
@@ -79,6 +86,15 @@ public class StudentLoginController {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("student_register.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
+
+        // ফিক্স: এখানে Maximized করা হয়েছে যাতে উইন্ডো ছোট না হয়
+     //   stage.setMaximized(true);
+        if (stage.isMaximized()) {
+            stage.setMaximized(false); // একটু ছোট করুন
+            stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+        } else {
+            stage.setMaximized(true);
+        }
         stage.show();
     }
 
@@ -87,6 +103,14 @@ public class StudentLoginController {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Main.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
+
+        // ফিক্স: এখানে Maximized করা হয়েছে
+        if (stage.isMaximized()) {
+            stage.setMaximized(false); // একটু ছোট করুন
+            stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+        } else {
+            stage.setMaximized(true);
+        }
         stage.show();
     }
 
@@ -95,6 +119,9 @@ public class StudentLoginController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         if (title != null) stage.setTitle(title);
+
+        // ফিক্স: ড্যাশবোর্ডে যাওয়ার সময়ও স্ক্রিন ফুল থাকবে
+        stage.setMaximized(true);
         stage.show();
     }
 

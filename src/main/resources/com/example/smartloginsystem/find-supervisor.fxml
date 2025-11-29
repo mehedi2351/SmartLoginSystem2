@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="800" prefWidth="1200" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.FindSupervisorController">
+<AnchorPane prefHeight="848.0" prefWidth="1101.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smartloginsystem.FindSupervisorController">
 
     <!-- Header Section -->
     <StackPane prefHeight="80" style="-fx-border-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 3); -fx-background-color: linear-gradient(to right, #141E30, #243B55);;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
@@ -33,7 +24,7 @@
     </StackPane>
 
     <!-- Main Content -->
-    <VBox layoutY="80" spacing="20" style="-fx-padding: 30 0 0 0;" AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="30" AnchorPane.topAnchor="80">
+    <VBox layoutY="80" prefHeight="738.0" prefWidth="938.0" spacing="20" style="-fx-padding: 30 0 0 0;" AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="30" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="80">
 
         <!-- Status Legend -->
         <HBox alignment="CENTER" spacing="30">
@@ -52,7 +43,7 @@
         </HBox>
 
         <!-- Supervisors Grid -->
-        <ScrollPane fitToWidth="true" prefHeight="671.0" prefWidth="1139.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0;">
+        <ScrollPane fitToWidth="true" prefHeight="670.0" prefWidth="959.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0;">
             <GridPane hgap="20" style="-fx-padding: 10 0; -fx-background-color: linear-gradient(to bottom right, #DDE1F8, #C5CAE9, #9FA8DA);;" vgap="20">
                 <columnConstraints>
                     <ColumnConstraints percentWidth="50" />

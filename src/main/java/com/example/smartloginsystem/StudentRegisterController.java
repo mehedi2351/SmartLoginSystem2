@@ -114,5 +114,11 @@ public class StudentRegisterController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
+        if (stage.isMaximized()) {
+            stage.setMaximized(false); // একটু ছোট করুন
+            stage.setMaximized(true);  // আবার বড় করুন (এতে কন্টেন্ট সেন্টারে চলে আসবে)
+        } else {
+            stage.setMaximized(true);
+        }
     }
 }
